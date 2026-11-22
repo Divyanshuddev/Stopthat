@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Iconic Glass Aura Backdrop Glow (Matches uploaded photo) */
+  .aura-glow-card {
+    position: relative;
+  }
+  .aura-glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -18px;
+    background: radial-gradient(circle at 88% 12%, rgba(255, 115, 0, 0.7), transparent 45%),
+                radial-gradient(circle at 12% 88%, rgba(147, 51, 234, 0.65), transparent 50%),
+                radial-gradient(circle at 50% 98%, rgba(59, 130, 246, 0.45), transparent 45%);
+    filter: blur(28px);
+    border-radius: 36px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.95;
+  }
+
+  /* Deep Glassmorphism Surface for Signboard */
+  .glass-surface {
+    background: rgba(14, 15, 24, 0.88);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 
+      0 25px 60px -15px rgba(0, 0, 0, 0.35),
+      0 0 0 1px rgba(0, 0, 0, 0.05),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Luminous Light Glass Surface */
+  .glass-surface-light {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      0 20px 50px -10px rgba(0, 0, 0, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 1);
+  }
+
+  /* Sleek Glass Panels for Light UI */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 
+      0 10px 30px -5px rgba(0, 0, 0, 0.05),
+      0 4px 6px -2px rgba(0, 0, 0, 0.02),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .dark .glass-panel {
+    background: rgba(12, 13, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+  }
+
+  /* Frosted Glass Inputs */
+  .glass-input {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    color: #0f172a;
+    transition: all 0.2s ease;
+  }
+  .glass-input:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+    background: #ffffff;
+  }
+
+  .dark .glass-input {
+    background: rgba(8, 9, 16, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+  }
+  .dark .glass-input:focus {
+    border-color: rgba(255, 138, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 115, 0, 0.25);
+    background: rgba(15, 16, 28, 0.85);
+  }
+
+  /* Neon Aura Text Glow */
+  .text-glow-aura {
+    text-shadow: 0 0 12px rgba(255, 140, 0, 0.6), 0 0 24px rgba(168, 85, 247, 0.4);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 8px #06b6d4, 0 0 20px #0891b2;
+  }
+
+  .text-glow-white {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Gradient Aura Button */
+  .btn-aura {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff2e63 50%, #8b5cf6 100%);
+    box-shadow: 0 4px 20px rgba(255, 75, 43, 0.3);
+  }
+  .btn-aura:hover {
+    box-shadow: 0 6px 25px rgba(255, 75, 43, 0.45), 0 0 15px rgba(139, 92, 246, 0.35);
+  }
+
+  /* Realistic textures preserved */
+  .bg-cardboard {
+    background-color: #c9a474;
+    background-image: 
+      radial-gradient(#9d784a 12%, transparent 16%),
+      radial-gradient(#ab8757 12%, transparent 16%),
+      linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%),
+      linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%);
+    background-position: 0 0, 10px 10px, 0 0, 15px 15px;
+    background-size: 20px 20px, 20px 20px, 30px 30px, 30px 30px;
+  }
+
+  .bg-felt {
+    background: repeating-linear-gradient(
+      180deg,
+      #18181b,
+      #18181b 12px,
+      #09090b 13px,
+      #27272a 14px,
+      #18181b 15px
+    );
+  }
+
+  .bg-stripes-hazard {
+    background: repeating-linear-gradient(
+      -45deg,
+      #facc15,
+      #facc15 15px,
+      #000000 15px,
+      #000000 30px
+    );
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
